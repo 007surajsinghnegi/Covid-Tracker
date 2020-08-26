@@ -1,5 +1,5 @@
 import React ,{useState, useEffect}from 'react';
-import {fetchDailyData} from '../../api';
+import {fetchDailyData} from '../api';
 import {Line , Bar} from 'react-chartjs-2';
 import styles from "./Chart.module.css";
 
@@ -24,7 +24,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country}) => {
                 datasets: [
                   {
                     label: 'People',
-                    backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
+                    backgroundColor: ['blue', 'green', 'red'],
                     data: [confirmed.value, recovered.value, deaths.value],
                   },
                 ],
@@ -46,9 +46,10 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country}) => {
                     datasets:[{
                         data:dailyData.map(({confirmed})=>confirmed),
                         label:'Infected',
-                        borderColor:'#3333ff',
+                        borderColor:'rgba(219, 135, 25, 0.836)',
                         fill:true,
-                    },{
+                    },
+                    {
                         data:dailyData.map(({deaths})=>deaths),
                         label:'Deaths',
                         borderColor:'red',

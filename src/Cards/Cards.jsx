@@ -14,7 +14,7 @@ const Cards = ({data:{confirmed, recovered,deaths,lastUpdate}}) => {
             <Grid container spacing={3} justify="center">
                 <CardComponent
                 className={styles.infected}
-                cardTitle="Infected"
+                cardTitle="CoronaVirus Cases"
                 value={confirmed.value}
                 lastUpdate={lastUpdate}
                 cardSubtitle="Number of active cases from COVID-19."
@@ -22,7 +22,7 @@ const Cards = ({data:{confirmed, recovered,deaths,lastUpdate}}) => {
 
                 <CardComponent
                 className={styles.recovered}
-                cardTitle="Recovered"
+                cardTitle="Recovered Patients"
                 value={recovered.value}
                 lastUpdate={lastUpdate}
                 cardSubtitle="Number of recoveries from COVID-19"
@@ -30,7 +30,7 @@ const Cards = ({data:{confirmed, recovered,deaths,lastUpdate}}) => {
 
                 <CardComponent
                 className={styles.deaths}
-                cardTitle="Death"
+                cardTitle="Deaths"
                 value={deaths.value}
                 lastUpdate={lastUpdate}
                 cardSubtitle="Number of deaths caused by COVID-19"
